@@ -1,0 +1,8 @@
+.header {
+  background-color: var(--primary-green);
+  padding: 1.25rem;
+  font-size: var(--small-font-size);
+  font-weight: 400;
+  color: var(--white);
+  text-align: center;
+}
