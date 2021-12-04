@@ -2,26 +2,27 @@ import React, { useEffect, useState } from 'react'
 import Header from './components/Header'
 import Table from './components/Table'
 import { fetchTransactions } from './api/client'
-import { ITransactionsData } from './types'
+import { ITransactionItem } from './types'
 
 function App() {
-  const [data, setData] = useState<ITransactionsData>()
+  const [transactions, setTransactions] = useState<ITransactionItem[]>()
+  const [page, setPage] = useState<number>(1)
 
   useEffect(() => {
-    const transactions = fetchTransactions()
-    transactions.then((res) => {
-      setData(res)
+    const data = fetchTransactions(page)
+    data.then((res) => {
+      setTransactions(res.transactions)
+      setPage(res.page)
     })
-  }, [])
+  }, [page])
 
   return (
     <>
       <Header title='Bench Test'/>
-      {data && (
-        <Table
-          transactions={data.transactions}
-          page={data.page}
-          totalCount={data.totalCount}
+      {transactions && (
+        <Table 
+          transactions={transactions}
+          totalAmount={0}
         />
       )}
     </>
