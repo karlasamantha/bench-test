@@ -15,8 +15,9 @@ h1 {
   --white: #ffffff;
 
   /* Table color variables */
-  --table-element-bg-color: #fbfbfa;
-  --table-element-border-color: #f6f6f6;
+  --table-header-bg-color: var(--white);
+  --table-bg-color: #fbfbfa;
+  --table-border-color: #e4e0e0;
 
   /* Typography */
   --regular-font-size: 1rem;

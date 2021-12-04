@@ -1,20 +1,25 @@
 import React from 'react'
 import TableItem from './TableItem'
-import { ITransactionsData } from '../types'
+import { ITransactionItem, TableHeaderItemsEnum } from '../types'
+import styles from '../styles/Table.module.css'
 
-function Table({ totalCount, page, transactions }: ITransactionsData) {
-  console.log(totalCount)
-  console.log(page)
+function Table({ transactions, totalAmount }: {transactions: ITransactionItem[], totalAmount: number}) {
   return (
-    <table>
+    <table className={styles.table}>
+      <thead>
+        <tr className={styles.thead}>
+          {Object.keys(TableHeaderItemsEnum).map((item, index) => 
+            <th className={styles.item}  key={index}>{item}</th>
+          )}
+          <th className={styles.item}>{totalAmount}</th>
+        </tr>
+      </thead>
       <tbody>
         {transactions.map((transaction, index) => (
-          <TableItem 
+          <TableItem
             key={index}
-            Date={transaction.Date}
-            Company={transaction.Company}
-            Ledger={transaction.Ledger}
-            Amount={transaction.Amount}
+            index={index}
+            transaction={transaction}
           />
         ))}
       </tbody>

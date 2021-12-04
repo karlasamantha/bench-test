@@ -10,3 +10,9 @@ export interface ITransactionItem {
   Amount: string,
   Company: string
 }
+
+export enum TableHeaderItemsEnum {
+  Date = 'Date',
+  Company = 'Company',
+  Account = 'Account',
+}
