@@ -1,17 +1,18 @@
 import React from 'react'
 import TableItem from './TableItem'
 import { ITransactionItem, TableHeaderItemsEnum } from '../types'
+import { calculateTotalAmount } from '../utils'
 import styles from '../styles/Table.module.css'
 
-function Table({ transactions, totalAmount }: {transactions: ITransactionItem[], totalAmount: number}) {
+function Table({ transactions }: {transactions: ITransactionItem[]}) {
   return (
     <table className={styles.table}>
       <thead>
         <tr className={styles.thead}>
           {Object.keys(TableHeaderItemsEnum).map((item, index) => 
-            <th className={styles.item}  key={index}>{item}</th>
+            <th key={index}>{item}</th>
           )}
-          <th className={styles.item}>{totalAmount}</th>
+          <th>{calculateTotalAmount(transactions)}</th>
         </tr>
       </thead>
       <tbody>

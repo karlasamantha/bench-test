@@ -14,18 +14,15 @@
   text-align: left;
 }
 
+th,
+td {
+  padding: 1rem;
+}
+
 .row {
   border: 1px solid var(--table-border-color);
   font-size: var(--small-font-size);
   font-weight: 500;
-}
-
-.item {
-  padding: 1rem;
-}
-
-.amount {
-  text-align: right;
 }
 
 .oddElement {
@@ -33,6 +30,6 @@
   padding: 1rem;
 }
 
-.light {
+.item:nth-child(odd) {
   color: var(--light-gray);
 }
