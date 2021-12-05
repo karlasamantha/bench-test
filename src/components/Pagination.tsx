@@ -1,4 +1,3 @@
-import React from 'react'
 import { isLastPage } from '../utils'
 import styles from '../styles/Pagination.module.css'
 

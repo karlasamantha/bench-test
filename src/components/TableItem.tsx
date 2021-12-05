@@ -1,4 +1,3 @@
-import React from 'react'
 import { ITransactionItem } from '../types/index'
 import { formatCurrency } from '../utils'
 import styles from '../styles/Table.module.css'

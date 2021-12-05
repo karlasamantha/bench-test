@@ -1,4 +1,3 @@
-import React from 'react'
 import TableItem from './TableItem'
 import { ITransactionItem, TableHeaderItemsEnum } from '../types'
 import { calculateTotalAmount } from '../utils'
