@@ -4,12 +4,10 @@ import styles from '../styles/Pagination.module.css'
 function Pagination(
   { page,
     totalCount,
-    transactionsPerPage,
     fetchTransactions
   }: { 
     page: number,
     totalCount: number,
-    transactionsPerPage: number,
     fetchTransactions: (page: number) => void
   }) {
   return (
@@ -18,6 +16,7 @@ function Pagination(
           <button
           className={styles.button}
           onClick={() => fetchTransactions(page - 1)}
+          data-testid='previous'
         >
           Previous
         </button>
@@ -25,8 +24,9 @@ function Pagination(
       <span className={styles.current}>{page}</span>
       <button
         className={styles.button}
-        disabled={isLastPage(page, transactionsPerPage, totalCount)}
+        disabled={isLastPage(page, totalCount)}
         onClick={() => fetchTransactions(page + 1)}
+        data-testid='next'
       >
         Next
       </button>

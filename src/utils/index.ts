@@ -20,8 +20,7 @@ export const calculateTotalAmount = (transactions: ITransactionItem[]): string =
     .toFixed(2))
 }
 
-export const isLastPage = (page: number, transactionsLength: number, totalCount: number) => {
-  // determine if we reached the last page based on the number of items per page
-  // and the total number os transactions across all pages
-  return (page - 1) * 10 + transactionsLength >= totalCount
+export const isLastPage = (page: number, totalCount: number) => {
+  // determine last based on the limit of items per initial request
+  return page >= Math.ceil(totalCount / 10)
 }

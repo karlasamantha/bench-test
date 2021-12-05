@@ -39,7 +39,6 @@ function App() {
         <Pagination
           page={page}
           totalCount={totalCount}
-          transactionsPerPage={transactions?.length}
           fetchTransactions={fetchTransactions}
         />
         </>
