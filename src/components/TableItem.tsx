@@ -1,5 +1,6 @@
 import React from 'react'
 import { ITransactionItem } from '../types/index'
+import { formatCurrency } from '../utils'
 import styles from '../styles/Table.module.css'
 
 function TableItem({ transaction, index }: {transaction: ITransactionItem, index: number}) {
@@ -17,7 +18,7 @@ function TableItem({ transaction, index }: {transaction: ITransactionItem, index
       <td className={getClassName(index)}>{Date}</td>
       <td className={getClassName(index)}>{Company}</td>
       <td className={getClassName(index)}>{Ledger}</td>
-      <td className={getClassName(index)}>{Amount}</td>
+      <td className={getClassName(index)}>{formatCurrency(Amount)}</td>
     </tr>
   )
 }
