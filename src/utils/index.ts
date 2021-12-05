@@ -1,7 +1,8 @@
 import { ITransactionItem } from "../types"
 
-export const formatDateString = (date: string, locale: string = 'en-CA') => {
-  return new Date(date).toLocaleDateString(locale)
+export const formatDateString = (date: string) => {
+  // using substring to avoid adding a third-party library to format string
+  return new Date(date).toDateString().substring(3)
 }
 
 export const formatCurrency = (value: string, locale: string = 'en-CA', currency: string = 'CAD') => {
