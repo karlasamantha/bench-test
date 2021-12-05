@@ -4,7 +4,7 @@ See online: [bench-test](https://bench-test.samantha-vale.com/)
 
 ## Running locally
 
-> This web app was built using node version 16.13.0, make sure your version is > 14.
+> This web app was built using node version 16.13.0, make sure your node version is compatible with its latest features
 
 To run this app locally, use the following commands:
 
